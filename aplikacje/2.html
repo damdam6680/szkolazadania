@@ -1,17 +1,19 @@
-<head>
+
+<html>
     <head></head>
     <body>
         <p id="p1">obiekty DOM</p>
         <p id="p2">pargraf kl 4g</p>
-        <div id="d1">
-
-        </div>
+        <div id="d1"></div>
+		<button id="b0" onclick="f()">klik</button>
+		<button id="b1" onclick="foo()">klik</button>
 
         <script>
-            
+		var b0 = document.getElementsByTagName("p")[0];
+		var d1 = document.getElementById("d1");
+		d1.innerHTML = "b0 " + b0 + "</br>";
+		
+			
         </script>
     </body>
-</head>
-
-
-
+</html>
