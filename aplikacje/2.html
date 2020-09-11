@@ -1,19 +1,96 @@
-
 <html>
-    <head></head>
-    <body>
-        <p id="p1">obiekty DOM</p>
-        <p id="p2">pargraf kl 4g</p>
-        <div id="d1"></div>
-		<button id="b0" onclick="f()">klik</button>
-		<button id="b1" onclick="foo()">klik</button>
+<head>
+</head>
+<body>
+<style>
+html{
+background-color: grey;
+color: white;
+font-size: 20px;
+}
+.styl0{
+color: red;
+width: 200px;
+padding: 5px;
+font-size: 20px;
+}
 
-        <script>
-		var b0 = document.getElementsByTagName("p")[0];
-		var d1 = document.getElementById("d1");
-		d1.innerHTML = "b0 " + b0 + "</br>";
-		
-			
-        </script>
-    </body>
+.styl1{
+color: green;
+width: 200px;
+padding: 5px;
+font-size: 20px;
+}
+</style>
+<h1>Sebastian Słowik kl.4G</h1>
+<p id="p0" >Tworzenie obiektów. Funkcja konstrucyjna klasy. Kl 4G </p> 
+<p id="p1">Paragraf Kl 4G </p>
+<p id="p2">Paragraf Kl 4G </p>
+<div id="d1">Kontener ZN</div>
+<button id="b0" onclick="f0()" class="styl0"> przycisk b0</button>
+<button id="b1" onclick="f1()" class="styl1"> przycisk b1</button>
+
+
+<script>
+/* znacznik posiada swoje atrybuty  tagi to znaczniki na stonie (,np: znacznik/tag <p></p> posiada atrybut id="p1", atrybut ten zawiera wartosc "p1" i ma nazwę id
+
+https://www.w3schools.com/jsref/prop_attr_name.asp
+
+*/
+/* kod z w3schools nie było na lekcji
+let d1 = document.getElementById("d1");
+function f0(){
+
+//  document.getElementsByTagName("nazwa_znacznika")[numer_atrybutu_zapisany_w_tablicy] Pobieranie elementów ze strony www
+let b0 = document.getElementsByTagName("BUTTON")[0];
+let x = b0.attributes[0].value;
+
+d1.innerHTML = "Pierwsza wartość atrybutu dla znacznika button: " + x + "</br>";
+}
+*/
+
+let b0 = document.getElementsByTagName("BUTTON")[0];
+let b1 = document.getElementsByTagName("BUTTON")[1];
+let d1 = document.getElementById("d1");
+let p1 = document.getElementById("p1");
+/*d1.innerHTML = "</br> Drugi przycisk b0 " + b0 + "</br>";
+d1.innerHTML += "</br> Drugi przycisk b1 " + b1 + "</br>";
+
+//nazwa_zmiennej_obiektowej.attributes.item(nr_atrybutu).nazwa_wlasciowsci
+
+let b0_atrybut0_nazwa = b0.attributes.item(2).name;
+
+
+document.getElementById("p1").innerHTML = "Przycisk b0 " + b0 + ".</br> Nazwa atrybutu 2- b0_atrybut0_nazwa: " + b0_atrybut0_nazwa + "</br>";
+
+let b0_atrybut0_wartosc = b0.attributes.item(2).value; // przypisanie do zmiennej b0_atrybut0_wartosc wartości atrybutu nr 3 dla przycisku 0
+
+b1.attributes.item(2).value = b0_atrybut0_wartosc;// przypisanie dla przyciusku 1 dla atrybutu 3 czyli class wartosci z przycisku 0 czyli: "style0" co spowoduje zmianę stylu przycisku
+
+document.getElementById("p1").innerHTML += "</br>Przycisk b0 " + b0 + ".</br> Wartosc atrybutu 2 - b0_atrybut0_wartosc: " + b0_atrybut0_wartosc + "</br>";
+
+
+ lub po kliknięciu przycisku nr.0 zmienia wartość atrybutu class z przycisku b1 na wartość atrybutu przycisku b0
+*/
+function f0() {
+
+
+let b0_atrybut2_wartosc = b0.attributes.item(2).value;
+
+b1.attributes.item(2).value = b0_atrybut2_wartosc; // tutaj następuje przypisanie atrybutu z b0 do b1
+
+document.getElementById("p1").innerHTML += "</br>Przycisk b0 " + b0 + ".</br> Wartosc atrybutu 2 - b0_atrybut2_wartosc: " + b0_atrybut2_wartosc + "</br>";
+
+
+} 
+ 
+
+
+/*														ZADANIE 
+// -------------------------------------------------------------------------------------------------------------
+Uzupełnij skrypt w taki sposób aby po kliknięciu przyciusku b0 jego styl został przypisany do przyciusku b1
+*/
+
+</script>
+</body>
 </html>
