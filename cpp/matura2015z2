@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    fstream fl("liczby.txt",ios::in);
+    string line;
+    int przezdwa = 0;
+    int przez8 = 0;
+    if(fl.is_open()){
+        while(getline(fl,line)){
+            if(line[line.size()-1] == '0'){
+               przezdwa++;
+            }
+            if(line[line.size()-1] == '0' && line[line.size()-2] == '0' && line[line.size()-3] == '0'){
+                przez8++;
+            }
+        }
+        cout << przezdwa<<endl;
+        cout << przez8;
+    }
+    return 0;
+}
